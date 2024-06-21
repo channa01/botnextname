@@ -2,8 +2,8 @@ const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 // ใส่โทเคนบอทของคุณที่ได้จาก Discord Developer Portal
-const channel_id = "816716857620955218"; //คลิกขวา discord copy channel id
-const token = 'MTI1MzU1NTI5OTYwNDg5Mzc0Nw.GJ5i1q.dysGIxj312YErDcxreQb38514QrHMTfYwWjR8s'; //Discord Developer Portal
+const channel_id = ""; //คลิกขวา discord copy channel id
+const token = ''; //Discord Developer Portal
 
 // อาร์เรย์ของชื่อ
 const names = ['A', 'B', 'C', 'D']; //ชื่อผู้เข้าร่วม
