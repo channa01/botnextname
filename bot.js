@@ -3,7 +3,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 // ใส่โทเคนบอทของคุณที่ได้จาก Discord Developer Portal
 const channel_id = ""; //คลิกขวา discord copy channel id
-const token = ''; //Discord Developer Portal
+const token = ""; //Discord Developer Portal
 
 // อาร์เรย์ของชื่อ
 const names = ['A', 'B', 'C', 'D']; //ชื่อผู้เข้าร่วม
@@ -19,9 +19,10 @@ function checkTimeAndSendMessage() {
     const now = new Date();
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
+    const currentDay = now.getDay(); // ได้วันในสัปดาห์ (0=อาทิตย์, 1=จันทร์, ..., 6=เสาร์)
 
-    // ถ้าเวลาคือ 9:30 น.
-    if (currentHour === 9 && currentMinute === 30) {
+    // ถ้าวันนี้ไม่ใช่วันเสาร์หรืออาทิตย์ และเวลาคือ 9:30 น.
+    if (currentDay !== 0 && currentDay !== 6 && currentHour === 9 && currentMinute === 30) {
         const channel = client.channels.cache.get(channel_id); // แทนที่ด้วย Channel ID ของคุณ
         if (channel) {
             channel.send(`วันนี้คิว : ${names[currentIndex]}`);
